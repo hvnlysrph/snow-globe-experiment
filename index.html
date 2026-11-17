@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f5f2ea">
+    <meta name="description" content="A quiet little snow globe. Give it a shake and watch winter swirl.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Little Winter">
+    <title>A Little Winter — Snow Globe</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./icon.svg">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <a class="wordmark" href="./" aria-label="A Little Winter home">
+          <span class="wordmark__flake" aria-hidden="true">✳</span>
+          <span>STILL&nbsp; / &nbsp;WINTER</span>
+        </a>
+        <button class="install-button" id="install-button" type="button" hidden>
+          <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
+            <path d="M10 2.5v10m0 0 3.5-3.5M10 12.5 6.5 9M3.5 13.5v3h13v-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Install
+        </button>
+        <span class="edition">A POCKET-SIZED ESCAPE&nbsp; · &nbsp;NO. 01</span>
+      </header>
+
+      <section class="experience" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow"><span></span> YOUR OWN LITTLE WORLD</p>
+          <h1 id="page-title">A little winter,<br><em>held in glass.</em></h1>
+          <p class="description">A quiet moment, wherever you are.<br>Give the globe a shake and let it snow.</p>
+        </div>
+
+        <div class="globe-wrap">
+          <div class="globe-halo" aria-hidden="true"></div>
+          <canvas id="snow-globe" width="500" height="560" role="img" aria-label="An illustrated snow globe with a little cabin, evergreen trees, and falling snow. Shake your phone or use the button below to make the snow swirl.">
+            A snow globe with a cabin and falling snow.
+          </canvas>
+          <span class="globe-caption"><span class="caption-line"></span> SOMEWHERE, IT’S SNOWING</span>
+        </div>
+
+        <div class="controls">
+          <button class="shake-button" id="shake-button" type="button">
+            <span class="shake-button__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M6.5 4.5c-1.6 1.7-2 4.6-.4 6.3L12 17l5.9-6.2c1.6-1.7 1.2-4.6-.4-6.3a4.2 4.2 0 0 0-5.5-.2 4.2 4.2 0 0 0-5.5.2ZM3 8l2-1m14 1 2-1M4 15l2-.5m12 .5 2 .5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>Shake the globe</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="motion-button" id="motion-button" type="button">
+            <span class="motion-indicator" aria-hidden="true"></span>
+            <span id="motion-label">Turn on shake-to-snow</span>
+          </button>
+          <p class="status" id="status" role="status" aria-live="polite">A little tap works, too.</p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>MADE FOR A SLOWER MOMENT</span>
+        <span class="footer-snowflake" aria-hidden="true">✳</span>
+        <span>BEST EXPERIENCED IN PORTRAIT</span>
+      </footer>
+    </main>
+  </body>
+</html>

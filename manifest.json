@@ -1,0 +1,19 @@
+{
+  "name": "A Little Winter — Snow Globe",
+  "short_name": "Little Winter",
+  "description": "A quiet little snow globe. Give it a shake and watch winter swirl.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f2ea",
+  "theme_color": "#f5f2ea",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
