@@ -212,7 +212,7 @@ function drawTree(x, y, scale) {
 }
 
 function drawBase() {
-  const base = context.createLinearGradient(0, 424, 0, 520);
+  const base = context.createLinearGradient(0, 423, 0, 488);
   base.addColorStop(0, "#b89472");
   base.addColorStop(0.18, "#987658");
   base.addColorStop(0.52, "#795c45");
@@ -220,23 +220,23 @@ function drawBase() {
 
   context.fillStyle = "rgba(73,60,48,.12)";
   context.beginPath();
-  context.ellipse(250, 498, 153, 20, 0, 0, Math.PI * 2);
+  context.ellipse(250, 484, 100, 13, 0, 0, Math.PI * 2);
   context.fill();
 
   context.beginPath();
-  context.moveTo(93, 423);
-  context.quadraticCurveTo(250, 438, 407, 423);
-  context.lineTo(392, 472);
-  context.quadraticCurveTo(250, 493, 108, 472);
+  context.moveTo(160, 423);
+  context.quadraticCurveTo(250, 435, 340, 423);
+  context.lineTo(331, 454);
+  context.quadraticCurveTo(250, 471, 169, 454);
   context.closePath();
   context.fillStyle = base;
   context.fill();
 
   context.beginPath();
-  context.moveTo(108, 461);
-  context.quadraticCurveTo(250, 480, 392, 461);
-  context.lineTo(384, 490);
-  context.quadraticCurveTo(250, 510, 116, 490);
+  context.moveTo(169, 450);
+  context.quadraticCurveTo(250, 466, 331, 450);
+  context.lineTo(325, 477);
+  context.quadraticCurveTo(250, 491, 175, 477);
   context.closePath();
   context.fillStyle = "#806247";
   context.fill();
@@ -244,15 +244,15 @@ function drawBase() {
   context.strokeStyle = "rgba(255,241,218,.36)";
   context.lineWidth = 2;
   context.beginPath();
-  context.moveTo(107, 461);
-  context.quadraticCurveTo(250, 480, 393, 461);
+  context.moveTo(168, 450);
+  context.quadraticCurveTo(250, 466, 332, 450);
   context.stroke();
 
   context.fillStyle = "#e6d2b1";
   context.font = "500 9px Georgia, serif";
   context.textAlign = "center";
   context.letterSpacing = "2px";
-  context.fillText("STILL WINTER", 250, 480);
+  context.fillText("STILL WINTER", 250, 470);
 }
 
 function drawFlakes(delta) {
