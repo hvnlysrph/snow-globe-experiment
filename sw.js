@@ -1,4 +1,4 @@
-const CACHE_NAME = "little-winter-v2";
+const CACHE_NAME = "little-winter-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
