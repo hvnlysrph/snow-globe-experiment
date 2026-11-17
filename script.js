@@ -5,6 +5,7 @@ const motionButton = document.querySelector("#motion-button");
 const motionLabel = document.querySelector("#motion-label");
 const status = document.querySelector("#status");
 const installButton = document.querySelector("#install-button");
+const installLabel = document.querySelector("#install-label");
 
 const width = 500;
 const height = 560;
@@ -15,6 +16,11 @@ let lastFrame = 0;
 let motionEnabled = false;
 let previousMotion = null;
 let installPrompt = null;
+const isIosDevice = /iphone|ipad|ipod/i.test(navigator.userAgent) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const isStandalone = window.matchMedia("(display-mode: standalone)").matches ||
+  navigator.standalone === true;
+const showIosInstallHelp = isIosDevice && !isStandalone;
 
 function random(min, max) {
   return min + Math.random() * (max - min);
@@ -396,11 +402,22 @@ motionButton.addEventListener("click", enableMotion);
 window.addEventListener("beforeinstallprompt", (event) => {
   event.preventDefault();
   installPrompt = event;
+  installLabel.textContent = "Install";
   installButton.hidden = false;
 });
 
+if (showIosInstallHelp) {
+  installLabel.textContent = "How to install";
+  installButton.hidden = false;
+}
+
 installButton.addEventListener("click", async () => {
-  if (!installPrompt) return;
+  if (!installPrompt) {
+    if (showIosInstallHelp) {
+      status.textContent = "In Safari, tap Share, then Add to Home Screen.";
+    }
+    return;
+  }
   installPrompt.prompt();
   await installPrompt.userChoice;
   installPrompt = null;
